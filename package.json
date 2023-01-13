@@ -25,7 +25,7 @@
     "rollup": "rollup -c",
     "test": "jest",
     "dev": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs",
+    "build-storybook": "build-storybook -o docs --no-dll",
     "predeploy": "npm run rollup && npm run build-storybook",
     "deploy": "npm --no-git-tag-version version patch && npm publish"
   },
