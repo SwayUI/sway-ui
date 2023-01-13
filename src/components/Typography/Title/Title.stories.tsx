@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof Title>;
 
 const Template: ComponentStory<typeof Title> = (args) => {
-    return <Title {...args}>Lorem ipsum dolor sit amet</Title>;
+    return <Title {...args}>The best React UI Library</Title>;
 };
 
 export const H1 = Template.bind({});
