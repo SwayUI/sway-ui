@@ -1,4 +1,4 @@
-const theme = require('./theme/theme');
+const theme = require('@sway-ui/sway-ui-theme').theme;
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
