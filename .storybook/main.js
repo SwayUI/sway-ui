@@ -8,7 +8,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    '@chakra-ui/storybook-addon'
+    '@chakra-ui/storybook-addon',
+    'storybook-addon-sass-postcss'
   ],
   "framework": "@storybook/react",
   "core": {
