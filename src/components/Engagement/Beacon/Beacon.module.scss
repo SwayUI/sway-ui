@@ -1,0 +1,76 @@
+$size-xs: 5px;
+$size-sm: 10px;
+$size-md: 15px;
+$size-lg: 20px;
+$size-xl: 25px;
+
+.sway_ui_beacon{
+   position: relative;
+   -webkit-animation: grow .4s 1 linear;
+   animation: grow .4s 1 linear;
+
+   &:before{
+      animation: burst-animation 1s infinite;
+      animation-fill-mode: forwards;
+      z-index: 0;
+      background-color: inherit;
+      content: '';
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+      border-radius: 50%;
+      position: absolute;
+   }
+
+   &.xs{
+      &:before{
+         width: $size-xs;
+         height: $size-xs;
+         top: calc(50% - ($size-xs / 2));
+         left: calc(50% - ($size-xs / 2));
+      }
+   }
+
+   &.sm{
+      &:before{
+         width: $size-sm;
+         height: $size-sm;
+         top: calc(50% - ($size-sm / 2));
+         left: calc(50% - ($size-sm / 2));
+      }
+   }
+
+   &.md{
+      &:before{
+         width: $size-md;
+         height: $size-md;
+         top: calc(50% - ($size-md / 2));
+         left: calc(50% - ($size-md / 2));
+      }
+   }
+
+   &.lg{
+      &:before{
+         width: $size-lg;
+         height: $size-lg;
+         top: calc(50% - ($size-lg / 2));
+         left: calc(50% - ($size-lg / 2));
+      }
+   }
+
+   &.xl{
+      &:before{
+         width: $size-xl;
+         height: $size-xl;
+         top: calc(50% - ($size-xl / 2));
+         left: calc(50% - ($size-xl / 2));
+      }
+   }
+}
+
+@keyframes burst-animation {
+   from { opacity: 0.9; transform:scale(1); }
+   to { opacity: 0; transform:scale(4); }
+}
