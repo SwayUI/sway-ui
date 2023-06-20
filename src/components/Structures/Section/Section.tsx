@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Flex, Heading, Text} from "@chakra-ui/react";
+import {Box, Flex, Heading, Spacer, Text} from "@chakra-ui/react";
 
 export interface SectionProps {
     title?: string;
@@ -7,6 +7,7 @@ export interface SectionProps {
     actions?: React.ReactNode;
     isLoading?: boolean;
     size?: 'sm' | 'md' | 'lg';
+    children?: React.ReactNode;
 }
 
 const Section = (props: SectionProps) => {
@@ -24,18 +25,22 @@ const Section = (props: SectionProps) => {
     }
 
     return (
-        <Flex w={'100%'} direction={['column', 'row']} justify={['flex-start', 'space-between']} align={['flex-start', 'center']} mb={3}>
-            <Box maxW={props.actions ? '60%' : '100%'}>
-                <Heading as={'h2'} fontSize={sizeToPx()} noOfLines={1} fontWeight={600}>
-                    {props.title || 'Something went wrong'}
-                </Heading>
-                <Text fontSize={sizeToPx() * 0.6} color={'muted'} noOfLines={1}>
-                    {props.description || 'We have been notified about the problem and will fix it as soon as possible.'}
-                </Text>
-            </Box>
+        <Box w={'100%'}>
+            <Flex w={'100%'} direction={['column', 'row']} justify={['flex-start', 'space-between']} align={['flex-start', 'center']}>
+                <Box maxW={props.actions ? '60%' : '100%'}>
+                    <Heading as={'h2'} fontSize={sizeToPx()} noOfLines={1} fontWeight={600}>
+                        {props.title || 'Something went wrong'}
+                    </Heading>
+                    <Text fontSize={sizeToPx() * 0.6} color={'muted'} noOfLines={1}>
+                        {props.description || 'We have been notified about the problem and will fix it as soon as possible.'}
+                    </Text>
+                </Box>
 
-            {props.actions && props.actions}
-        </Flex>
+                {props.actions && props.actions}
+            </Flex>
+            <Spacer mt={2} mb={2}/>
+            {props.children && props.children}
+        </Box>
     );
 }
 

@@ -1,6 +1,13 @@
 import * as React from 'react'
 import { ChakraProvider, ChakraProviderProps } from '@chakra-ui/react'
 import { theme as defaultTheme } from './theme'
+import { Global } from '@emotion/react';
+
+const Fonts = () => (
+    <Global
+        styles={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');`}
+    />
+)
 
 export interface SwayContextValue {
     linkComponent?: React.ElementType<any>
@@ -31,6 +38,7 @@ export function SwayProvider({
     return (
         <SwayContext.Provider value={context}>
             <ChakraProvider {...rest} theme={theme || defaultTheme}>
+                <Fonts/>
                 {children}
             </ChakraProvider>
         </SwayContext.Provider>
