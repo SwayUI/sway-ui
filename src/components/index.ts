@@ -1,5 +1,15 @@
+// Data
+export { default as Persona } from "./Data/Display/Persona";
+// Engagements
+export { default as Beacon } from "./Engagement/Beacon";
+// Modal
+export { default as Modal } from "./Modal/Modal";
+export { default as ConfirmModalButton } from "./Modal/ConfirmModalButton";
 // Structures
 export { default as AppSidebarStructure } from "./Structures/AppSidebarStructure";
+export { default as ErrorPage } from "./Structures/ErrorPage";
+export { default as Page } from "./Structures/Page";
+export { default as Section } from "./Structures/Section";
 // Sidebar
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as SidebarHeader } from "./Sidebar/Elements/SidebarHeader";

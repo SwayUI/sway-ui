@@ -1,4 +1,4 @@
-const theme = require('@sway-ui/sway-ui-theme').theme;
+const theme = require('../src/theme/index').theme;
 
 let themeModifiedForStorybook = {
   ...theme,

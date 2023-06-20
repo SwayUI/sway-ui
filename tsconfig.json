@@ -11,8 +11,14 @@
     "declarationDir": "types",
     "sourceMap": true,
     "outDir": "dist",
+    "rootDir": "src",
+    "declarationMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
-  }
+    "emitDeclarationOnly": true
+  },
+  "exclude": [
+    "src/stories",
+    "**/*.stories.tsx"
+  ]
 }

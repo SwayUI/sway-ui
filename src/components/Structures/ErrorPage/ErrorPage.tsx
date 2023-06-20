@@ -1,5 +1,4 @@
 import React from "react";
-import "./ErrorPage.module.scss";
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import {ExclamationCircleIcon} from "@heroicons/react/24/outline";
 

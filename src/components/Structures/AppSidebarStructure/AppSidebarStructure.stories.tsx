@@ -1,56 +1,105 @@
 import React from "react";
-import {ComponentMeta, ComponentStory} from "@storybook/react";
-import AppSidebarStructure from "./AppSidebarStructure";
-import SidebarHeader from "../../Sidebar/Elements/SidebarHeader";
-import {Flex, Switch} from "@chakra-ui/react";
-import {SidebarCategory, SidebarItem, SidebarSearchBar, Title} from "../../index";
-import {ChartBarIcon, DocumentIcon, InboxIcon, UsersIcon} from "@heroicons/react/24/outline";
-import {BuildingOfficeIcon, InboxStackIcon} from "@heroicons/react/24/solid";
-import Sidebar from "../../Sidebar";
+import { Meta, StoryFn } from '@storybook/react';
+import AppSidebarStructure, {AppSidebarStructureProps} from "./AppSidebarStructure";
+import {Box} from "@chakra-ui/react";
+import {Title} from "../../index";
 
 export default {
-    title: "SwayUI/Structures/AppSidebarStructure",
-    component: AppSidebarStructure,
-} as ComponentMeta<typeof AppSidebarStructure>;
+    title: 'SwayUI/Structures/AppSidebarStructure',
+    parameters: {
+        docs: {},
+        layout: 'fullscreen',
+    },
+} as Meta
 
-const Template: ComponentStory<typeof AppSidebarStructure> = (args) => {
-    return <AppSidebarStructure {...args}>
-        <Title as={'h1'} size={'xl'}>The best React UI Library for SaaS</Title>
-    </AppSidebarStructure>;
-};
+const Template: StoryFn<AppSidebarStructureProps> = ({ children, ...args }) => (
+    <AppSidebarStructure {...args}>{children}</AppSidebarStructure>
+)
 
-export const Default = Template.bind({});
-Default.args = {
+export const FullscreenVariant = Template.bind({})
+FullscreenVariant.args = {
+    navbar: (
+        <Box height="16" borderBottomWidth="1px">
+            Navbar
+        </Box>
+    ),
     sidebar: (
-        <Sidebar>
-            <SidebarHeader
-                logo={<img src={'https://i.imgur.com/E9QzoQj.png'} alt={'SwayUI Logo'} style={{height: 22}}/>}
-                action={<Switch colorScheme={'purple'} size={'sm'} isChecked/>}/>
-            <SidebarSearchBar/>
-            <SidebarItem name={"Dashboard"} icon={<ChartBarIcon width={18}/>}/>
-            <SidebarItem name={"Activity Inbox"} icon={<InboxIcon width={18}/>}/>
-            <SidebarItem name={"Notes"} icon={<DocumentIcon width={18}/>}/>
-            <SidebarCategory name={'Records'}>
-                <SidebarItem name={"Users"} icon={<UsersIcon width={18}/>}/>
-                <SidebarItem name={"Companies"} icon={<BuildingOfficeIcon width={18}/>}/>
-            </SidebarCategory>
-            <SidebarCategory name={'Pinned Views'}>
-                <SidebarItem name={"Users"} icon={(
-                    <Flex align={'center'} justifyContent={'center'} position={'relative'} bg={'#beb7fd'} w={6} h={6}
-                          borderRadius={'lg'}>
-                        <InboxStackIcon width={15} color={"#251c66"}/>
-                    </Flex>
-                )}/>
-                <SidebarItem name={"Companies"} icon={(
-                    <Flex align={'center'} justifyContent={'center'} position={'relative'} bg={'#b7fdda'} w={6} h={6}
-                          borderRadius={'lg'}>
-                        <BuildingOfficeIcon width={15} color={"#1c664c"}/>
-                    </Flex>
-                )}/>
-            </SidebarCategory>
-        </Sidebar>
-    )
-};
-Default.parameters = {
-    layout: "fullscreen",
+        <Box width="300px" borderRightWidth="1px">
+            Sidebar
+        </Box>
+    ),
+    children: (
+        <Box as="main" overflow="auto">
+            <Box height="4000px">Main content</Box>
+        </Box>
+    ),
+    footer: (
+        <Box height="16" borderTopWidth="1px">
+            Footer
+        </Box>
+    ),
+}
+
+export const AbsoluteVariant = Template.bind({})
+AbsoluteVariant.args = {
+    variant: 'static',
+    height: '100vh',
+    navbar: (
+        <Box height="16" borderBottomWidth="1px">
+            Navbar
+        </Box>
+    ),
+    sidebar: (
+        <Box width="300px" borderRightWidth="1px">
+            Sidebar
+        </Box>
+    ),
+    children: (
+        <Box as="main" p="8">
+            The absolut variant is absolute positioned with `inset: 0`. To make it
+            fill the entire viewport add 100% to html, body and any wrapping elements.
+            Or set height of AppShell to 100vh.
+        </Box>
+    ),
+    footer: (
+        <Box height="16" borderTopWidth="1px">
+            Footer
+        </Box>
+    ),
+}
+
+export const StaticVariant = Template.bind({})
+StaticVariant.args = {
+    variant: 'static',
+    navbar: (
+        <Box
+            height="48px"
+            borderBottomWidth="1px"
+            position="sticky"
+            top="0"
+            bg="white"
+            _dark={{
+                bg: 'gray.800',
+            }}
+        >
+            Navbar
+        </Box>
+    ),
+    sidebar: (
+        <Box
+            width="300px"
+            height="calc(100vh - 48px)"
+            borderRightWidth="1px"
+            position="sticky"
+            top="48px"
+            p="8"
+        >
+            Sidebar
+        </Box>
+    ),
+    children: (
+        <Box as="main" height="4000px" p="8">
+            Main content
+        </Box>
+    ),
 }

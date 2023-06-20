@@ -1,7 +1,5 @@
 import React from "react";
-import "./Page.module.scss";
 import {Flex, Heading, ResponsiveValue, Text} from "@chakra-ui/react";
-import {ExclamationCircleIcon} from "@heroicons/react/24/outline";
 
 export interface PageProps {
     contentWidth?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "100%";
