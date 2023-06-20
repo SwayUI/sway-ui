@@ -1,9 +1,10 @@
 {
   "name": "@swayui/sway-ui",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "description": "The React UI library for SaaS built on top of Chakra UI",
   "repository": "https://github.com/SwayUI/sway-ui.git",
   "author": "Clément de Louvencourt <clement@meilleursbiens.com>",
+  "private": false,
   "keywords": [
     "react",
     "chakra",
@@ -22,9 +23,6 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
@@ -32,7 +30,7 @@
     "build-storybook": "storybook build -o docs-build",
     "predeploy": "npm run rollup && npm run build-storybook",
     "deploy-storybook": "gh-pages -d docs-build",
-    "deploy": "npm --no-git-tag-version version patch && npm publish && npm run deploy-storybook"
+    "deploy": "npm --no-git-tag-version version patch && npm publish --access public && npm run deploy-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",

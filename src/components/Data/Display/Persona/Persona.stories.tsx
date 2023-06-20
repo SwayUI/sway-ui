@@ -1,6 +1,8 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Persona from "./Persona";
+import {Badge, Text} from "@chakra-ui/react";
+import {DocumentIcon} from "@heroicons/react/24/outline";
 
 export default {
     title: "SwayUI/Data/Display/Persona",
@@ -45,4 +47,19 @@ XSmall.args = {
     secondaryText: "Software Engineer",
     avatarUrl: "https://bit.ly/dan-abramov",
     presence: "offline",
+};
+
+export const RightElements = Template.bind({});
+RightElements.args = {
+    size: "md",
+    name: "John Doe",
+    nameRightElement: (
+        <Badge colorScheme={"purple"}>PRO</Badge>
+    ),
+    secondaryTextRightElement: (
+        <DocumentIcon width={14}/>
+    ),
+    secondaryText: "Software Engineer",
+    avatarUrl: "https://bit.ly/dan-abramov",
+    presence: "away",
 };

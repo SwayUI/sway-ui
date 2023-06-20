@@ -10,11 +10,13 @@ import {
     useColorModeValue
 } from "@chakra-ui/react";
 
-export interface PersonaProps extends HeadingProps {
+export interface PersonaProps {
     name: string;
+    nameRightElement?: React.ReactNode;
     avatarUrl?: string;
     presence?: "online" | "offline" | "away" | "busy";
     secondaryText?: string;
+    secondaryTextRightElement?: React.ReactNode;
     size: "lg" | "md" | "sm" | "xs" | "2xl" | "xl";
 }
 
@@ -42,9 +44,15 @@ const Persona = (props: PersonaProps) => {
                 <Badge/>
             </Avatar>
             <Box>
-                <Text noOfLines={1} fontSize={props.size} fontWeight={600} lineHeight={'1em'}>{props.name}</Text>
+                <HStack>
+                    <Text noOfLines={1} fontSize={props.size} fontWeight={600} lineHeight={'1em'}>{props.name}</Text>
+                    {props.nameRightElement && props.nameRightElement}
+                </HStack>
                 {props.secondaryText && (
-                    <Text noOfLines={1} color={'muted'} fontSize={props.size}>{props.secondaryText}</Text>
+                    <HStack spacing={1}>
+                        <Text noOfLines={1} color={'muted'} fontSize={props.size}>{props.secondaryText}</Text>
+                        {props.secondaryTextRightElement && props.secondaryTextRightElement}
+                    </HStack>
                 )}
             </Box>
         </HStack>

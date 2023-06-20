@@ -9,22 +9,42 @@ ___
 
 ## :cloud: Installation
 
-Install first [Chakra UI](https://chakra-ui.com/getting-started) :
+### Install first [Chakra UI](https://chakra-ui.com/getting-started) :
 ```shell
 npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
 ```
+or
+```shell
+yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion @heroicons/react
+```
 
-And then install SwayUI :
+### And then install SwayUI :
 
 ```shell  
-npm install @sway-ui/sway-ui-theme @sway-ui/sway-ui 
+npm install @swayui/sway-ui 
 ```  
+or
+```shell  
+yarn add @swayui/sway-ui 
+```  
+
+## :rocket: Usage
+
+```jsx
+import { DotBadge } from "@swayui/sway-ui";
+
+function App() {
+  return (
+    <DotBadge colorScheme={'green.300'} size={'sm'} text={'Active'}/>
+  );
+}
+```
 
 ## :raised_hands: Documentation
 
 ![Documentation](https://img.shields.io/badge/Documentation-📚-blue.svg)
 
-Documentation and examples are available here : [Example of use](https://swayui.mintlify.app/introduction)
+Documentation and examples are available here : [Example of use](https://swayui.github.io/sway-ui)
 
 ## :mag_right: Credits
 
