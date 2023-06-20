@@ -3,12 +3,14 @@
   width: 300px;
   height: 100vh;
   transition: all 0.3s ease-in-out;
+}
 
-  @media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
+  .sidebar-container{
     width: 100%;
     left: -100%;
 
-    &.is-active{
+    .is-active{
       left: 0;
     }
   }
