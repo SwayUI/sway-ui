@@ -24,7 +24,7 @@ const Section = (props: SectionProps) => {
     }
 
     return (
-        <Flex w={'100%'} direction={['column', 'row']} justify={['flex-start', 'space-between']} align={['flex-start', 'center']}>
+        <Flex w={'100%'} direction={['column', 'row']} justify={['flex-start', 'space-between']} align={['flex-start', 'center']} mb={3}>
             <Box maxW={props.actions ? '60%' : '100%'}>
                 <Heading as={'h2'} fontSize={sizeToPx()} noOfLines={1} fontWeight={600}>
                     {props.title || 'Something went wrong'}

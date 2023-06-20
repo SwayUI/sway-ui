@@ -11,7 +11,7 @@ ___
 
 ### Install first [Chakra UI](https://chakra-ui.com/getting-started) :
 ```shell
-npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion @heroicons/react
 ```
 or
 ```shell
@@ -31,11 +31,13 @@ yarn add @swayui/sway-ui
 ## :rocket: Usage
 
 ```jsx
-import { DotBadge } from "@swayui/sway-ui";
+import { SwayProvider, theme, DotBadge } from "@swayui/sway-ui";
 
 function App() {
   return (
-    <DotBadge colorScheme={'green.300'} size={'sm'} text={'Active'}/>
+    <SwayProvider theme={theme}>
+      <DotBadge colorScheme={'green.300'} size={'sm'} text={'Active'}/>
+    </SwayProvider>
   );
 }
 ```

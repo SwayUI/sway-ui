@@ -1,4 +1,5 @@
 // Data
+export { default as DotBadge } from "./Data/Display/DotBadge";
 export { default as Persona } from "./Data/Display/Persona";
 // Engagements
 export { default as Beacon } from "./Engagement/Beacon";

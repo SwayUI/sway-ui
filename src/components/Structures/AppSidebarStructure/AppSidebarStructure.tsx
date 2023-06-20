@@ -1,15 +1,17 @@
 import React from "react";
 import "./AppSidebarStructure.module.scss";
-import { createContext } from '@chakra-ui/react-utils'
+import {createContext} from '@chakra-ui/react-utils'
 import {
     Flex,
     HTMLChakraProps,
-    omitThemingProps, StylesProvider,
+    omitThemingProps,
+    StylesProvider,
     SystemStyleObject,
     useBreakpointValue,
-    useDisclosure, useMultiStyleConfig
+    useDisclosure,
+    useMultiStyleConfig
 } from '@chakra-ui/react'
-import { cx } from '@chakra-ui/utils';
+import {cx} from '@chakra-ui/utils';
 import {Breakpoints, getBreakpoints} from "../../Sidebar/Utils/SidebarBreakpoint";
 import {ThemingProps} from "@chakra-ui/system";
 

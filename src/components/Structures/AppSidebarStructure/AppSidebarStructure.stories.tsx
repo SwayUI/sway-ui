@@ -1,8 +1,7 @@
 import React from "react";
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import AppSidebarStructure, {AppSidebarStructureProps} from "./AppSidebarStructure";
 import {Box} from "@chakra-ui/react";
-import {Title} from "../../index";
 
 export default {
     title: 'SwayUI/Structures/AppSidebarStructure',
