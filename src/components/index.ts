@@ -19,6 +19,10 @@ export { default as SidebarSearchBar } from "./Sidebar/Elements/SidebarSearchBar
 export { default as SidebarCategory } from "./Sidebar/Elements/SidebarCategory";
 export { default as SidebarItem } from "./Sidebar/Elements/SidebarItem";
 export { default as SidebarSpacer } from "./Sidebar/Elements/SidebarSpacer";
+// Navbar
+export { default as Navbar } from "./Navbar/Navbar";
+export { default as NavbarSection } from "./Navbar/Elements/NavbarSection";
+export { default as NavbarLogo } from "./Navbar/Elements/NavbarLogo";
 // Typography
 export { default as Title } from "./Typography/Title";
 // Forms

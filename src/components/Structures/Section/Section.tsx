@@ -1,7 +1,7 @@
 import React from "react";
-import {Box, Flex, Heading, Spacer, Text} from "@chakra-ui/react";
+import {Box, BoxProps, Flex, Heading, Spacer, Text} from "@chakra-ui/react";
 
-export interface SectionProps {
+export interface SectionProps extends BoxProps{
     title?: string;
     description?: string;
     actions?: React.ReactNode;
@@ -25,7 +25,7 @@ const Section = (props: SectionProps) => {
     }
 
     return (
-        <Box w={'100%'}>
+        <Box w={'100%'} {...props}>
             <Flex w={'100%'} direction={['column', 'row']} justify={['flex-start', 'space-between']} align={['flex-start', 'center']}>
                 <Box maxW={props.actions ? '60%' : '100%'}>
                     <Heading as={'h2'} fontSize={sizeToPx()} noOfLines={1} fontWeight={600}>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ChakraProvider, ChakraProviderProps } from '@chakra-ui/react'
+import {ChakraProvider, ChakraProviderProps, ColorModeScript} from '@chakra-ui/react'
 import { theme as defaultTheme } from './theme'
 import { Global } from '@emotion/react';
 
@@ -40,6 +40,7 @@ export function SwayProvider({
             <ChakraProvider {...rest} theme={theme || defaultTheme}>
                 <Fonts/>
                 {children}
+                <ColorModeScript initialColorMode={"system"}/>
             </ChakraProvider>
         </SwayContext.Provider>
     )
