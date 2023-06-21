@@ -72,6 +72,7 @@ const AppSidebarStructure = (props: AppSidebarStructureProps) => {
 
     const containerStyles: SystemStyleObject = {
         flexDirection: 'column',
+        height: '100vh',
         ...styles.container,
     }
 

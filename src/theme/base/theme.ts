@@ -1,5 +1,6 @@
 import { theme, extendTheme, ChakraTheme } from '@chakra-ui/react'
 import {components} from "./components";
+import {mode, StyleFunctionProps} from "@chakra-ui/theme-tools";
 
 export const baseTheme = extendTheme({
     colors: {
@@ -15,4 +16,14 @@ export const baseTheme = extendTheme({
         },
     },
     components,
+    styles: {
+        global: (props: StyleFunctionProps) => ({
+            body: {
+                bg: props.colorMode === 'dark' ? 'gray.900' : 'gray.50',
+            },
+            "docs-story": {
+                bg: mode('white', 'gray.900')(props),
+            },
+        })
+    }
 }) as ChakraTheme

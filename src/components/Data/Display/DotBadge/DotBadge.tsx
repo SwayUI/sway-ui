@@ -52,7 +52,7 @@ const DotBadge = (props: DotBadgeProps) => {
         }
     }
 
-    const borderColor = useColorModeValue('gray.100', 'gray.700');
+    const borderColor = useColorModeValue('gray.100', 'gray.600');
 
     const pxSize = sizeToPx();
 

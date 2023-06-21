@@ -13,26 +13,26 @@ const SidebarCategory = (props: SidebarCategoryProps) => {
 
     const handleToggle = () => setIsOpen(!isOpen);
 
-    const iconColor = useColorModeValue('gray.500', 'gray.400');
+    const iconColor = useColorModeValue('gray.900', 'gray.300');
 
     return (
         <>
             <Flex
                 as={'a'}
                 direction={'row'}
-                justifyContent={'flex-start'}
+                justifyContent={'space-between'}
                 alignItems={'center'}
                 gap={'1px'}
                 w={'100%'}
-                px={3}
+                px={5}
                 cursor={'pointer'}
                 onClick={handleToggle}
                 {...props}>
+                <Text fontWeight={600} fontSize={14} color={iconColor}>{props.name}</Text>
                 <IconButton aria-label={"Toggle"} size={'sm'} variant={'ghost'} icon={isOpen ? (<ChevronDownIcon color={iconColor} width={15}/>) : (<ChevronUpIcon color={iconColor} width={15}/>)}/>
-                <Text fontWeight={500} fontSize={13} color={iconColor}>{props.name}</Text>
             </Flex>
             {/** @ts-ignore */}
-            <Collapse mt={4} in={isOpen}>
+            <Collapse in={isOpen} style={{marginTop: 3}}>
                 {props.children && props.children}
             </Collapse>
         </>

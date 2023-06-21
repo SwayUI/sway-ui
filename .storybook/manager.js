@@ -6,6 +6,6 @@ import swayTheme from "./sway-theme";
 addons.setConfig({
   theme: swayTheme,
   sidebar: {
-    showRoots: false,
+    showRoots: true,
   },
 });

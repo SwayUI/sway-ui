@@ -3,7 +3,7 @@ module.exports = {
     "reactDocgen": true
   },
   "stories": ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  "addons": ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", '@chakra-ui/storybook-addon', 'storybook-addon-sass-postcss'],
+  "addons": ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", '@chakra-ui/storybook-addon', '@storybook/addon-postcss', 'storybook-addon-sass-postcss'],
   "framework": {
     name: "@storybook/react-webpack5",
     options: {}
@@ -13,5 +13,5 @@ module.exports = {
   },
   docs: {
     autodocs: true
-  }
+  },
 };

@@ -18,7 +18,7 @@ const variantOutline = definePartsStyle((props) => {
 
   return {
     field: {
-      bg: props.colorMode === 'light' ? '#fff' : '#232323',
+      bg: props.colorMode === 'light' ? 'white' : 'gray.800',
       border: '1px solid ' + (props.colorMode === 'light' ? '#dbe6f3' : '#2e2e2e'),
       boxShadow: 'rgba(50, 50, 93, 0.05) 0px 2px 5px -1px, rgba(0, 0, 0, 0.1) 0px 1px 3px -1px',
       borderRadius: 8,
@@ -86,7 +86,7 @@ const Input = {
   defaultProps: {
     variant: 'outline',
     size: 'md',
-    focusBorderColor: 'primary.500',
+    focusBorderColor: 'primary.300',
     fontWeight: '500',
   },
   variants: {

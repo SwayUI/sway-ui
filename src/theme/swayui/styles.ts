@@ -4,9 +4,12 @@ import { mode, Styles } from '@chakra-ui/theme-tools'
 const styles: Styles = {
     global: (props) => ({
         body: {
-            bg: mode('#f9fbfc', '#161616')(props),
+            bg: mode('white', 'gray.900')(props),
             WebkitFontSmoothing: 'antialiased',
             TextRendering: 'optimizelegibility',
+        },
+        "docs-story": {
+            bg: mode('white', 'gray.900')(props),
         },
         '*, *::before, &::after': {
             borderColor: mode('gray.200', 'whiteAlpha.200')(props),

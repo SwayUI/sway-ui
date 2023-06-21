@@ -1,13 +1,17 @@
+import React from "react";
+import {SwayProvider} from "../src";
+
 const theme = require('../src/theme/index').theme;
 
-let themeModifiedForStorybook = {
-  ...theme,
-  fonts: {
-    ...theme.fonts,
-    body: 'Inter, sans-serif',
-    heading: 'Inter, sans-serif',
+export const decorators = [
+  (Story, context) => {
+    return (
+      <SwayProvider theme={theme}>
+        <Story  />
+      </SwayProvider>
+    );
   }
-}
+];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -18,7 +22,7 @@ export const parameters = {
     },
   },
   chakra: {
-    theme: themeModifiedForStorybook,
+    theme: theme,
   },
   backgrounds: {
     default: 'light',
@@ -29,8 +33,8 @@ export const parameters = {
       },
       {
         name: 'dark',
-        value: '#161616',
-      },
-    ],
-  },
+        value: '#141a23',
+      }
+      ]
+  }
 }
