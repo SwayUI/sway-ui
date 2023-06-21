@@ -69,7 +69,7 @@ const DotBadge = (props: DotBadgeProps) => {
         >
             <HStack>
                 <Box w={pxSize} h={pxSize} borderRadius={'100%'} bg={props.colorScheme || 'gray.500'}></Box>
-                <Text fontWeight={500} fontSize={textSizeToPx()}>{props.text}</Text>
+                <Text fontWeight={500} noOfLines={1} isTruncated fontSize={textSizeToPx()}>{props.text}</Text>
             </HStack>
 
         </Box>
