@@ -22,7 +22,7 @@ const baseStyleDialog = defineStyle((props) => {
     backdropFilter: 'blur(10px) saturate(190%) contrast(70%) brightness(80%)',
     fontSize: 'md',
     _dark: {
-      bg: 'grayAlpha.700',
+      bg: 'grayAlpha.900',
       boxShadow: 'dark-lg',
     },
   }

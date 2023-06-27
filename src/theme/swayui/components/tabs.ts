@@ -1,13 +1,14 @@
-import {ChakraStyledOptions} from "@chakra-ui/react";
 import {StyleFunctionProps} from "@chakra-ui/theme-tools";
 
 export default {
     variants: {
         'soft-rounded': (props: StyleFunctionProps) => ({
             tab: {
-                borderRadius: '5px',
+                borderRadius: '8px',
                 fontWeight: 'semibold',
+                whiteSpace: 'nowrap',
                 color: '#aaadbc',
+                px: '0.7em',
                 _selected: {
                     color: props.colorMode === 'light' ? '#000' : '#fff',
                     bg: props.colorMode === 'light' ? '#fff' : '#171717',
@@ -31,6 +32,17 @@ export default {
                 py: 1,
                 marginTop: 0,
             },
+            tabpanel: {
+                px: 0,
+            },
+            tabs: {
+                scrollbarWidth: 'none',
+                '::-webkit-scrollbar': {display: 'none'},
+                '-webkit-overflow-scrolling': 'touch',
+                boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.1)',
+                border: '0 none',
+                width: '100%',
+            }
         }),
         outline: (props: StyleFunctionProps) => ({
             tab: {
@@ -78,6 +90,9 @@ export default {
                 shadow: 'base',
                 border: '1px solid ' + (props.colorMode === 'light' ? '#d0d5dd' : '#454545'),
             },
+            tabpanel: {
+                px: 0,
+            }
         }),
     },
 }

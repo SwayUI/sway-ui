@@ -1,6 +1,6 @@
 {
   "name": "@swayui/sway-ui",
-  "version": "0.0.26",
+  "version": "0.0.32",
   "description": "The React UI library for SaaS built on top of Chakra UI",
   "repository": "https://github.com/SwayUI/sway-ui.git",
   "author": "Clément de Louvencourt <clement@meilleursbiens.com>",

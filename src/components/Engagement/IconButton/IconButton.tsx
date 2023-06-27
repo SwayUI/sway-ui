@@ -7,12 +7,12 @@ export interface IIconButtonProps extends Omit<IconButtonProps, "icon"> {
 
 const IconButton = (props: IIconButtonProps) => {
 
-    const [gray300, gray700] = useToken(
+    const [gray600, gray50] = useToken(
         'colors',
-        ['gray.400', 'gray.600'],
+        ['gray.500', 'gray.200'],
     )
 
-    const iconColor = useColorModeValue(gray300, gray700);
+    const iconColor = useColorModeValue(gray600, gray50);
 
     const sizeToPx = () => {
         switch(props.size){

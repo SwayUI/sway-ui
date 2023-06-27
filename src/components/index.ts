@@ -31,3 +31,5 @@ export { default as EmailInput } from "./Forms/Inputs/EmailInput";
 export { default as PasswordInput } from "./Forms/Inputs/PasswordInput";
 export { default as PhoneInput } from "./Forms/Inputs/PhoneInput";
 export { default as SelectInput } from "./Forms/Inputs/SelectInput";
+// Typography
+export { default as Tabs } from "./Navigation/Tabs";

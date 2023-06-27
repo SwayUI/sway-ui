@@ -9,6 +9,21 @@ $size-xl: 25px;
    -webkit-animation: grow .4s 1 linear;
    animation: grow .4s 1 linear;
 
+   &:after{
+      animation: burst-animation2 2s infinite;
+      animation-fill-mode: backwards;
+      z-index: 0;
+      background-color: inherit;
+      content: '';
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+      border-radius: 50%;
+      position: absolute;
+   }
+
    &:before{
       animation: burst-animation 1s infinite;
       animation-fill-mode: forwards;
@@ -25,7 +40,7 @@ $size-xl: 25px;
    }
 
    &.xs{
-      &:before{
+      &:before, &:after{
          width: $size-xs;
          height: $size-xs;
          top: calc(50% - ($size-xs / 2));
@@ -34,7 +49,7 @@ $size-xl: 25px;
    }
 
    &.sm{
-      &:before{
+      &:before, &:after{
          width: $size-sm;
          height: $size-sm;
          top: calc(50% - ($size-sm / 2));
@@ -43,7 +58,7 @@ $size-xl: 25px;
    }
 
    &.md{
-      &:before{
+      &:before, &:after{
          width: $size-md;
          height: $size-md;
          top: calc(50% - ($size-md / 2));
@@ -52,7 +67,7 @@ $size-xl: 25px;
    }
 
    &.lg{
-      &:before{
+      &:before, &:after{
          width: $size-lg;
          height: $size-lg;
          top: calc(50% - ($size-lg / 2));
@@ -61,7 +76,7 @@ $size-xl: 25px;
    }
 
    &.xl{
-      &:before{
+      &:before, &:after{
          width: $size-xl;
          height: $size-xl;
          top: calc(50% - ($size-xl / 2));
@@ -72,5 +87,9 @@ $size-xl: 25px;
 
 @keyframes burst-animation {
    from { opacity: 0.9; transform:scale(1); }
+   to { opacity: 0; transform:scale(4); }
+}
+@keyframes burst-animation2 {
+   from { opacity: 0.4; transform:scale(1); }
    to { opacity: 0; transform:scale(4); }
 }

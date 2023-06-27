@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import IconButton from "./IconButton";
 import {LifebuoyIcon} from "@heroicons/react/24/outline";
+import Button from "../Button";
 
 export default {
     title: "SwayUI/Engagement/IconButton",
@@ -9,7 +10,7 @@ export default {
 } as ComponentMeta<typeof IconButton>;
 
 const Template: ComponentStory<typeof IconButton> = (args) => {
-    return <IconButton {...args}></IconButton>;
+    return <Button {...args}></Button>;
 };
 
 export const XSmall = Template.bind({});
